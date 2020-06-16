@@ -1,0 +1,16 @@
+PODS:
+  - JXSegmentedView (1.0.6)
+
+DEPENDENCIES:
+  - JXSegmentedView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - JXSegmentedView
+
+SPEC CHECKSUMS:
+  JXSegmentedView: ceb6fb3a12716408bcd5c4210b93d947d079de25
+
+PODFILE CHECKSUM: 2b7ebbbb53038d549b6bff6b4bf82c3040a368af
+
+COCOAPODS: 1.6.0

@@ -9,14 +9,4 @@
 import UIKit
 
 class ArithmeticSample: NSObject {
-    //选择排序
-    func choseArithmetic(array:[Int]) -> ([Int]) {
-        for (index,item) in array.enumerated() {
-            let x:Int = item
-            for (index_y,item_y) in array[index..<array.count] {
-                
-            }
-        }
-        return array
-    }
 }
