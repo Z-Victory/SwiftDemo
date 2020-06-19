@@ -8,14 +8,14 @@
 
 import UIKit
 //Tabbar 图片偏移量
-let StandOutHeight:CGFloat = 20
-let kScreenWidth = UIScreen.main.bounds.size.width
-let kScreenHeight = UIScreen.main.bounds.size.height
-let Height_Tabbar = UITabBarController.init().tabBar.bounds.height
-let IS_IPhoneX_All = (kScreenHeight == 812 || kScreenHeight == 896)
+//let StandOutHeight:CGFloat = 20
+//let kScreenWidth = UIScreen.main.bounds.size.width
+//let kScreenHeight = UIScreen.main.bounds.size.height
+//let Height_Tabbar = UITabBarController.init().tabBar.bounds.height
+//let IS_IPhoneX_All = (kScreenHeight == 812 || kScreenHeight == 896)
 
 // Tabbar safe bottom margin.
-let TabbarSafeBottomMargin = (IS_IPhoneX_All ? 34 : 0)
+//let TabbarSafeBottomMargin = (IS_IPhoneX_All ? 34 : 0)
 
 class MainViewController: UITabBarController {
 
