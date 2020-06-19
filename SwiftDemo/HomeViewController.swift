@@ -9,9 +9,14 @@
 import UIKit
 import JXSegmentedView
 
-class HomeViewController: UIViewController, JXSegmentedViewDelegate {
+class HomeViewController: UIViewController, JXSegmentedViewDelegate,UITableViewDelegate,UITableViewDataSource {
+    
+    
     var segmentedView = JXSegmentedView()
     var segmentedDataSource = JXSegmentedTitleDataSource()
+    
+    let tableView = UITableView(frame: .zero, style: .plain)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -105,15 +110,38 @@ class HomeViewController: UIViewController, JXSegmentedViewDelegate {
         bannerView.imageArray = bannerImagesArray
         bannerView.reloadImage();
         
-//        rollView = [[LYHCycleScrollView alloc]initWithFrame:CGRectMake(0, textfield.bottom, self.view.frame.size.width, self.view.frame.size.width*0.46) addImageArray:self.bannerImagesArray];
-//        rollView.delegate = self;
-//        rollView.backgroundColor = [UIColor whiteColor];
-//        [_tableHeaderView addSubview:rollView];
-//        _tableHeaderView.height = rollView.bottom;
+        tableView.frame = CGRect(x: 0, y: bannerView.bottom, width: kScreenWidth, height: kScreenHeight - bannerView.bottom)
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.view.addSubview(tableView)
     }
     
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 292
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        if indexPath.item == 0 {
+//          let headerCell = VideoPlayCell()
+//          headerCell.todayCell.todayItem = todayItem
+//          headerCell.todayCell.layer.cornerRadius = 0
+//          headerCell.clipsToBounds = true
+//          headerCell.todayCell.backgroundView = nil
+//          return headerCell
+//        }
+//        let headerCell = VideoPlayCell()
+        var videoCell : VideoPlayCell! = tableView.dequeueReusableCell(withIdentifier: "VideoPlayCell")as?VideoPlayCell
+        if videoCell == nil {
+//            videoCell = VideoPlayCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "VideoPlayCell")
+            videoCell = Bundle.main.loadNibNamed("VideoPlayCell", owner: nil, options: nil)?.first as? VideoPlayCell
+        }
+        return videoCell
+    }
     
     // MARK: segmentView代理方法
     //点击选中或者滚动选中都会调用该方法。适用于只关心选中事件，而不关心具体是点击还是滚动选中的情况。
