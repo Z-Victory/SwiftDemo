@@ -13,8 +13,6 @@
 		38166874249C5F39005A3ADD /* YHStatusBarTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38166873249C5F39005A3ADD /* YHStatusBarTool.swift */; };
 		38166877249C86E0005A3ADD /* SwiftPch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38166876249C86E0005A3ADD /* SwiftPch.swift */; };
 		38166879249C8CA2005A3ADD /* YHColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38166878249C8CA2005A3ADD /* YHColor.swift */; };
-		3816689E249C9B70005A3ADD /* LYHCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38166899249C9B70005A3ADD /* LYHCycleScrollView.m */; };
-		3816689F249C9B70005A3ADD /* LYHPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3816689B249C9B70005A3ADD /* LYHPageControl.m */; };
 		381668A3249CABFE005A3ADD /* YHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381668A2249CABFE005A3ADD /* YHView.swift */; };
 		381668A7249CB32E005A3ADD /* VideoPlayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381668A5249CB32E005A3ADD /* VideoPlayCell.swift */; };
 		381668A8249CB32E005A3ADD /* VideoPlayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381668A6249CB32E005A3ADD /* VideoPlayCell.xib */; };
@@ -32,6 +30,8 @@
 		38D3F8992490E6B000642E63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D3F8972490E6B000642E63 /* LaunchScreen.storyboard */; };
 		38D3F8A42490E6B000642E63 /* SwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3F8A32490E6B000642E63 /* SwiftDemoTests.swift */; };
 		38D3F8AF2490E6B000642E63 /* SwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3F8AE2490E6B000642E63 /* SwiftDemoUITests.swift */; };
+		5970F4E024A4BDAB00BEFF12 /* LYHCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5970F4DE24A4BDAB00BEFF12 /* LYHCycleScrollView.m */; };
+		5970F4E124A4BDAB00BEFF12 /* LYHPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5970F4DF24A4BDAB00BEFF12 /* LYHPageControl.m */; };
 		965208C738332CA28DF3A533 /* libPods-SwiftDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BF37DCA2DB192E965C3AD1 /* libPods-SwiftDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -60,10 +60,6 @@
 		38166873249C5F39005A3ADD /* YHStatusBarTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHStatusBarTool.swift; sourceTree = "<group>"; };
 		38166876249C86E0005A3ADD /* SwiftPch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPch.swift; sourceTree = "<group>"; };
 		38166878249C8CA2005A3ADD /* YHColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHColor.swift; sourceTree = "<group>"; };
-		38166895249C9B70005A3ADD /* LYHCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYHCycleScrollView.h; sourceTree = "<group>"; };
-		38166897249C9B70005A3ADD /* LYHPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYHPageControl.h; sourceTree = "<group>"; };
-		38166899249C9B70005A3ADD /* LYHCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYHCycleScrollView.m; sourceTree = "<group>"; };
-		3816689B249C9B70005A3ADD /* LYHPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYHPageControl.m; sourceTree = "<group>"; };
 		381668A1249C9C4E005A3ADD /* SwiftOC-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftOC-Header.h"; sourceTree = "<group>"; };
 		381668A2249CABFE005A3ADD /* YHView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHView.swift; sourceTree = "<group>"; };
 		381668A5249CB32E005A3ADD /* VideoPlayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayCell.swift; sourceTree = "<group>"; };
@@ -88,6 +84,10 @@
 		38D3F8AA2490E6B000642E63 /* SwiftDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D3F8AE2490E6B000642E63 /* SwiftDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemoUITests.swift; sourceTree = "<group>"; };
 		38D3F8B02490E6B000642E63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5970F4DC24A4BDAB00BEFF12 /* LYHCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYHCycleScrollView.h; sourceTree = "<group>"; };
+		5970F4DD24A4BDAB00BEFF12 /* LYHPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYHPageControl.h; sourceTree = "<group>"; };
+		5970F4DE24A4BDAB00BEFF12 /* LYHCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYHCycleScrollView.m; sourceTree = "<group>"; };
+		5970F4DF24A4BDAB00BEFF12 /* LYHPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYHPageControl.m; sourceTree = "<group>"; };
 		910997743198C57C2C18FBDA /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D4BF37DCA2DB192E965C3AD1 /* libPods-SwiftDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -166,21 +166,9 @@
 		3816687D249C9854005A3ADD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				38166894249C9B70005A3ADD /* Home */,
+				5970F4DB24A4BDAB00BEFF12 /* Home */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		38166894249C9B70005A3ADD /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				38166895249C9B70005A3ADD /* LYHCycleScrollView.h */,
-				38166899249C9B70005A3ADD /* LYHCycleScrollView.m */,
-				38166897249C9B70005A3ADD /* LYHPageControl.h */,
-				3816689B249C9B70005A3ADD /* LYHPageControl.m */,
-			);
-			name = Home;
-			path = ../../../../MANA_iOS/DookayProject/General/Views/Home;
 			sourceTree = "<group>";
 		};
 		381668A4249CB2AA005A3ADD /* AppDelegate */ = {
@@ -255,6 +243,17 @@
 				38D3F8B02490E6B000642E63 /* Info.plist */,
 			);
 			path = SwiftDemoUITests;
+			sourceTree = "<group>";
+		};
+		5970F4DB24A4BDAB00BEFF12 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5970F4DC24A4BDAB00BEFF12 /* LYHCycleScrollView.h */,
+				5970F4DD24A4BDAB00BEFF12 /* LYHPageControl.h */,
+				5970F4DE24A4BDAB00BEFF12 /* LYHCycleScrollView.m */,
+				5970F4DF24A4BDAB00BEFF12 /* LYHPageControl.m */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		9348F214B32D71AA9870B85E /* Pods */ = {
@@ -445,13 +444,13 @@
 				381EB5DF24932BCC00666BE2 /* ArithmeticSample.swift in Sources */,
 				381EB5D52491CECF00666BE2 /* MainViewController.swift in Sources */,
 				381EB5D92491CF0200666BE2 /* RecViewController.swift in Sources */,
+				5970F4E024A4BDAB00BEFF12 /* LYHCycleScrollView.m in Sources */,
 				381668A3249CABFE005A3ADD /* YHView.swift in Sources */,
+				5970F4E124A4BDAB00BEFF12 /* LYHPageControl.m in Sources */,
 				381EB5DD2491CF5700666BE2 /* MyViewController.swift in Sources */,
 				38166877249C86E0005A3ADD /* SwiftPch.swift in Sources */,
 				3816686B249B4506005A3ADD /* Student2.swift in Sources */,
 				381EB5DB2491CF0B00666BE2 /* MessageViewController.swift in Sources */,
-				3816689F249C9B70005A3ADD /* LYHPageControl.m in Sources */,
-				3816689E249C9B70005A3ADD /* LYHCycleScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +555,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -610,7 +609,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -627,6 +626,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "SwiftDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -649,6 +649,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "SwiftDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
