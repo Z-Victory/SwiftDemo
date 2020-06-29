@@ -108,6 +108,22 @@
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="avatarButton" destination="DDf-1y-gp0" id="xIa-r8-ak5"/>
+                <outlet property="eyeImg" destination="DeO-0W-4Wt" id="K80-HM-vk2"/>
+                <outlet property="headphotoImg" destination="Npd-UH-kK8" id="5Dp-u3-0ZR"/>
+                <outlet property="likeButton" destination="vZo-Y3-maZ" id="Lia-Zo-WdD"/>
+                <outlet property="organizerNameLabel" destination="Xi9-Z3-vyY" id="Im4-Al-cCP"/>
+                <outlet property="playButton" destination="d6H-Ip-ySX" id="7v7-oT-biG"/>
+                <outlet property="professionalTagLabel" destination="cNb-2C-Egm" id="skv-kc-MXe"/>
+                <outlet property="shadowView" destination="OUn-4b-l8K" id="sKL-ut-M6h"/>
+                <outlet property="shareButton" destination="I6P-V8-0Cy" id="4W3-Og-7ow"/>
+                <outlet property="thumb" destination="hi9-NU-Q4g" id="C9J-1n-98V"/>
+                <outlet property="timeLabel" destination="sr3-d9-vXw" id="Bgo-GH-cbd"/>
+                <outlet property="verticalLineImg" destination="DQt-gy-4ra" id="lCE-aK-A03"/>
+                <outlet property="videoNameLabel" destination="ysk-6s-Brj" id="VYf-sS-ipi"/>
+                <outlet property="watchNumLabel" destination="xEj-Sq-00Y" id="Hiy-IM-OFQ"/>
+            </connections>
             <point key="canvasLocation" x="173.91304347826087" y="68.303571428571431"/>
         </tableViewCell>
     </objects>

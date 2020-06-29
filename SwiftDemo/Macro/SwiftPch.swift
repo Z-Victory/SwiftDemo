@@ -13,7 +13,10 @@ import SnapKit
 
 let kScreenWidth = UIScreen.main.bounds.size.width
 let kScreenHeight = UIScreen.main.bounds.size.height
-
+let SCREEN_X = kScreenWidth/375.0
+func SCREEN_RATIO(x:CGFloat)->CGFloat {
+        return (x*(kScreenWidth/375.0))
+    }
 let TabBar_Height =  44
 let NavBar_Height =  44
 

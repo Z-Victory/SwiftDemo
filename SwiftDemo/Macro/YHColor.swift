@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 extension UIColor {
     class func hexStringColor(hexString:String)->UIColor{
     var cstr = hexString.trimmingCharacters(in:  CharacterSet.whitespacesAndNewlines).uppercased() as NSString;
