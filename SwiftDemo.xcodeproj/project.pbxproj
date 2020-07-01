@@ -22,10 +22,10 @@
 		381EB5DB2491CF0B00666BE2 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381EB5DA2491CF0B00666BE2 /* MessageViewController.swift */; };
 		381EB5DD2491CF5700666BE2 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381EB5DC2491CF5700666BE2 /* MyViewController.swift */; };
 		381EB5DF24932BCC00666BE2 /* ArithmeticSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381EB5DE24932BCC00666BE2 /* ArithmeticSample.swift */; };
+		3850193124AC59D1007A64A0 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3850193024AC59D1007A64A0 /* CommentViewController.swift */; };
 		38B1400924A9CDF5005CC502 /* HookTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B1400824A9CDF5005CC502 /* HookTool.swift */; };
 		38D3F88D2490E6AA00642E63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3F88C2490E6AA00642E63 /* AppDelegate.swift */; };
 		38D3F88F2490E6AA00642E63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3F88E2490E6AA00642E63 /* SceneDelegate.swift */; };
-		38D3F8912490E6AA00642E63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3F8902490E6AA00642E63 /* ViewController.swift */; };
 		38D3F8942490E6AA00642E63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D3F8922490E6AA00642E63 /* Main.storyboard */; };
 		38D3F8962490E6B000642E63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38D3F8952490E6B000642E63 /* Assets.xcassets */; };
 		38D3F8992490E6B000642E63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D3F8972490E6B000642E63 /* LaunchScreen.storyboard */; };
@@ -71,11 +71,11 @@
 		381EB5DA2491CF0B00666BE2 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		381EB5DC2491CF5700666BE2 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		381EB5DE24932BCC00666BE2 /* ArithmeticSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticSample.swift; sourceTree = "<group>"; };
+		3850193024AC59D1007A64A0 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		38B1400824A9CDF5005CC502 /* HookTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HookTool.swift; sourceTree = "<group>"; };
 		38D3F8892490E6AA00642E63 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D3F88C2490E6AA00642E63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38D3F88E2490E6AA00642E63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		38D3F8902490E6AA00642E63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		38D3F8932490E6AA00642E63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38D3F8952490E6B000642E63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38D3F8982490E6B000642E63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -182,6 +182,21 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		3850192C24AC25CD007A64A0 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				381EB5D42491CECF00666BE2 /* MainViewController.swift */,
+				381EB5D62491CEF900666BE2 /* HomeViewController.swift */,
+				3850193024AC59D1007A64A0 /* CommentViewController.swift */,
+				381EB5D82491CF0200666BE2 /* RecViewController.swift */,
+				381668A5249CB32E005A3ADD /* VideoPlayCell.swift */,
+				381668A6249CB32E005A3ADD /* VideoPlayCell.xib */,
+				381EB5DA2491CF0B00666BE2 /* MessageViewController.swift */,
+				381EB5DC2491CF5700666BE2 /* MyViewController.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		38D3F8802490E6AA00642E63 = {
 			isa = PBXGroup;
 			children = (
@@ -212,14 +227,7 @@
 				38166871249C5EDB005A3ADD /* Helpers */,
 				3816686E249C5D81005A3ADD /* Macro */,
 				381668A1249C9C4E005A3ADD /* SwiftOC-Header.h */,
-				38D3F8902490E6AA00642E63 /* ViewController.swift */,
-				381EB5D42491CECF00666BE2 /* MainViewController.swift */,
-				381EB5D62491CEF900666BE2 /* HomeViewController.swift */,
-				381EB5D82491CF0200666BE2 /* RecViewController.swift */,
-				381668A5249CB32E005A3ADD /* VideoPlayCell.swift */,
-				381668A6249CB32E005A3ADD /* VideoPlayCell.xib */,
-				381EB5DA2491CF0B00666BE2 /* MessageViewController.swift */,
-				381EB5DC2491CF5700666BE2 /* MyViewController.swift */,
+				3850192C24AC25CD007A64A0 /* Module */,
 				381EB5DE24932BCC00666BE2 /* ArithmeticSample.swift */,
 				38166866249B443F005A3ADD /* Person.swift */,
 				38166868249B448E005A3ADD /* Student.swift */,
@@ -437,7 +445,6 @@
 			files = (
 				38166867249B443F005A3ADD /* Person.swift in Sources */,
 				381EB5D72491CEF900666BE2 /* HomeViewController.swift in Sources */,
-				38D3F8912490E6AA00642E63 /* ViewController.swift in Sources */,
 				38166869249B448E005A3ADD /* Student.swift in Sources */,
 				38166879249C8CA2005A3ADD /* YHColor.swift in Sources */,
 				38D3F88D2490E6AA00642E63 /* AppDelegate.swift in Sources */,
@@ -446,6 +453,7 @@
 				38B1400924A9CDF5005CC502 /* HookTool.swift in Sources */,
 				38166874249C5F39005A3ADD /* YHStatusBarTool.swift in Sources */,
 				381EB5DF24932BCC00666BE2 /* ArithmeticSample.swift in Sources */,
+				3850193124AC59D1007A64A0 /* CommentViewController.swift in Sources */,
 				381EB5D52491CECF00666BE2 /* MainViewController.swift in Sources */,
 				381EB5D92491CF0200666BE2 /* RecViewController.swift in Sources */,
 				5970F4E024A4BDAB00BEFF12 /* LYHCycleScrollView.m in Sources */,
