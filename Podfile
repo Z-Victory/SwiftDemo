@@ -3,4 +3,6 @@ target 'SwiftDemo' do
   pod 'SDWebImage', '~> 5.0.1'
   pod 'SnapKit'
   pod 'SwiftLint'
+  pod 'Alamofire'
+  pod 'ObjectMapper'
 end

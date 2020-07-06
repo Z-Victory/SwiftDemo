@@ -8,9 +8,10 @@
 
 import UIKit
 import JXSegmentedView
+import Alamofire
 
 class HomeViewController: UIViewController, JXSegmentedViewDelegate,UITableViewDelegate,UITableViewDataSource {
-    
+    var a:Int?
     
     var segmentedView = JXSegmentedView()
     var segmentedDataSource = JXSegmentedTitleDataSource()
@@ -19,8 +20,6 @@ class HomeViewController: UIViewController, JXSegmentedViewDelegate,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         let _: CGFloat = 150
         let titles = ["推荐","关注","科技","VR","MAPPING","艺术展","奥特曼"]
@@ -64,8 +63,41 @@ class HomeViewController: UIViewController, JXSegmentedViewDelegate,UITableViewD
         view.addSubview(self.segmentedView)
         
         setUI()
-        
+        getData()
     }
+func getData() -> Void {
+
+        let para = ["pageSize":String(50),"pageIndex":String(1)]
+    let request = AF.request("https://www.manamana.net/api/mobile/2.0/recommend/hotVideoList",method: .get,parameters:para,encoder: URLEncodedFormParameterEncoder(destination: .httpBody),headers: ["Content-Type":"application/json"])
+
+        request.responseJSON { (dataResponse) in
+    //        print("访问的Url地址 = " + baseUrl + loginUrl)
+            let resultDict = dataResponse.value as! [String:Any]
+            if dataResponse.error == nil{
+                ///请求成功
+                let resultDict = dataResponse.value as! [String:Any]
+                print(resultDict)
+            }else{
+                print(dataResponse.error!)
+            }
+        }
+    //        let para:[String:Any] = ["pageSize":String(50),"pageIndex":String(1)]
+    //        let header:HTTPHeaders = ["Accept": "*/*", "X-Requested-With": "APP"]
+    //        AF.request("https://www.manamana.net/api/mobile/2.0/recommend/hotVideoList",
+    //                   method: HTTPMethod.get,
+    //                   parameters: para,
+    //                   encoding: URLEncoding.default ,
+    //                   headers: header).responseJSON { (dataResponse) in
+    //            debugPrint("debugPrint \(dataResponse)")
+    //            if dataResponse.value != nil{
+    //                let values = dataResponse.result as! NSDictionary
+    //                let messageDic = values["message"] as! NSDictionary
+    //                let questionContentArr = messageDic["questionContent"] as! [[String : Any]]
+    //                if questionContentArr.count != 0 {
+    //                }
+    //            }
+    //        }
+}
     func setUI() -> Void {
         //搜索view
         let textfieldView = UIView.init(frame: CGRect(x: 15, y: segmentedView.bottom + 5, width: kScreenWidth - 30, height: 34))
