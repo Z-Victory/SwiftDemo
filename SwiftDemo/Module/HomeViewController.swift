@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, JXSegmentedViewDelegate,UITableViewD
     var segmentedView = JXSegmentedView()
     var segmentedDataSource = JXSegmentedTitleDataSource()
     
-    let tableView = UITableView(frame: .zero, style: .plain)
+    let tableView = UITableView(frame: .zero, style: .grouped)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +63,7 @@ class HomeViewController: UIViewController, JXSegmentedViewDelegate,UITableViewD
         view.addSubview(self.segmentedView)
         
         setUI()
-        getData()
+//        getData()
     }
 func getData() -> Void {
 
@@ -155,6 +155,16 @@ func getData() -> Void {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 320
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView.init(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        view.backgroundColor = UIColor.red
+        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
