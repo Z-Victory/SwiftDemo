@@ -7,13 +7,14 @@
 //
 
 import UIKit
-
-class CommentViewController: UIViewController {
+import JXSegmentedView
+///
+class CommonViewController: UIViewController{
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor(red: CGFloat(arc4random()%255)/255, green: CGFloat(arc4random()%255)/255, blue: CGFloat(arc4random()%255)/255, alpha: 1)
     }
     
 
@@ -27,4 +28,10 @@ class CommentViewController: UIViewController {
     }
     */
 
+}
+
+extension CommonViewController: JXSegmentedListContainerViewListDelegate {
+    func listView() -> UIView {
+        return view
+    }
 }

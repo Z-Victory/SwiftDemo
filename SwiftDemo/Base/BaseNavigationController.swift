@@ -1,18 +1,18 @@
 //
-//  RecViewController.swift
+//  BaseNavigationController.swift
 //  SwiftDemo
 //
-//  Created by mana on 2020/6/11.
+//  Created by mana on 2020/9/8.
 //  Copyright © 2020 mana. All rights reserved.
 //
 
 import UIKit
 
-class RecViewController: UIViewController {
+class BaseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.blue
+
         // Do any additional setup after loading the view.
     }
     

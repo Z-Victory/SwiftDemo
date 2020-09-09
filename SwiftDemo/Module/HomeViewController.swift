@@ -10,7 +10,7 @@ import UIKit
 import JXSegmentedView
 import Alamofire
 
-class HomeViewController: UIViewController, JXSegmentedViewDelegate,UITableViewDelegate,UITableViewDataSource {
+class HomeViewController: UIViewController, JXSegmentedViewDelegate,UITableViewDelegate,UITableViewDataSource, JXSegmentedListContainerViewDataSource {
     var a:Int?
     
     var segmentedView = JXSegmentedView()
@@ -61,8 +61,11 @@ class HomeViewController: UIViewController, JXSegmentedViewDelegate,UITableViewD
 //        segmentedView.layer.borderWidth = 1/UIScreen.main.scale
         
         view.addSubview(self.segmentedView)
-        
-        setUI()
+        let listContainerView = JXSegmentedListContainerView(dataSource: self)
+        listContainerView.frame = CGRect(x: 0, y: StatusBar_Height+60, width: view.bounds.size.width, height: view.bounds.size.height - StatusBar_Height - 60)
+        view.addSubview(listContainerView)
+        segmentedView.listContainer = listContainerView
+//        setUI()
 //        getData()
     }
 func getData() -> Void {
@@ -188,7 +191,17 @@ func getData() -> Void {
     // MARK: segmentView代理方法
     //点击选中或者滚动选中都会调用该方法。适用于只关心选中事件，而不关心具体是点击还是滚动选中的情况。
     func segmentedView(_ segmentedView: JXSegmentedView, didSelectedItemAt index: Int) {
-        
+//        var vc = UIViewController.init()
+//        if index == 0 {
+//            vc = RecViewController.init()
+//        }else{
+//            vc = CommonViewController.init()
+//        }
+//        let childViews = self.view.subviews
+//        for child in childViews {
+//            child.removeFromSuperview()
+//        }
+//        self.view.addSubview(vc.view)
     }
     // 点击选中的情况才会调用该方法
     func segmentedView(_ segmentedView: JXSegmentedView, didClickSelectedItemAt index: Int) {
@@ -216,7 +229,16 @@ func getData() -> Void {
         stu3.printt()
         stu4.printt()
     }
-    
+    //MARK: - JXSegmentedListContainerViewDataSource
+    //返回列表的数量
+    func numberOfLists(in listContainerView: JXSegmentedListContainerView) -> Int {
+        return segmentedDataSource.titles.count
+    }
+    //返回遵从`JXSegmentedListContainerViewListDelegate`协议的实例
+    func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
+        return CommonViewController()
+    }
+    //MARK: - JXSegmentedListContainerViewListDelegate
     /*
     // MARK: - Navigation
 
