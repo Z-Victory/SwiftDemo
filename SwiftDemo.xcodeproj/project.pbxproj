@@ -22,6 +22,9 @@
 		381EB5DD2491CF5700666BE2 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381EB5DC2491CF5700666BE2 /* MyViewController.swift */; };
 		381EB5DF24932BCC00666BE2 /* ArithmeticSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381EB5DE24932BCC00666BE2 /* ArithmeticSample.swift */; };
 		382C33B325076C60009822A4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382C33B225076C60009822A4 /* MainViewController.swift */; };
+		3842457C250F402C002A5261 /* RecMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842457B250F402C002A5261 /* RecMainCell.swift */; };
+		3842457F250F5332002A5261 /* RecOperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842457D250F5332002A5261 /* RecOperationCell.swift */; };
+		38424580250F5332002A5261 /* RecOperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3842457E250F5332002A5261 /* RecOperationCell.xib */; };
 		387D034C25076F3B0004ADF9 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D034B25076F3B0004ADF9 /* CommonViewController.swift */; };
 		38A69DA02507513B00022C02 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A69D9F2507513B00022C02 /* BaseNavigationController.swift */; };
 		38A69DA22507514A00022C02 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A69DA12507514A00022C02 /* BaseViewController.swift */; };
@@ -75,6 +78,9 @@
 		381EB5DC2491CF5700666BE2 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyViewController.swift; path = Module/MyViewController.swift; sourceTree = "<group>"; };
 		381EB5DE24932BCC00666BE2 /* ArithmeticSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticSample.swift; sourceTree = "<group>"; };
 		382C33B225076C60009822A4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3842457B250F402C002A5261 /* RecMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecMainCell.swift; sourceTree = "<group>"; };
+		3842457D250F5332002A5261 /* RecOperationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecOperationCell.swift; sourceTree = "<group>"; };
+		3842457E250F5332002A5261 /* RecOperationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecOperationCell.xib; sourceTree = "<group>"; };
 		387D034B25076F3B0004ADF9 /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonViewController.swift; path = Module/CommonViewController.swift; sourceTree = "<group>"; };
 		38A69D9F2507513B00022C02 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		38A69DA12507514A00022C02 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +236,9 @@
 				381EB5D62491CEF900666BE2 /* HomeViewController.swift */,
 				381EB5D82491CF0200666BE2 /* RecViewController.swift */,
 				387D034B25076F3B0004ADF9 /* CommonViewController.swift */,
+				3842457B250F402C002A5261 /* RecMainCell.swift */,
+				3842457D250F5332002A5261 /* RecOperationCell.swift */,
+				3842457E250F5332002A5261 /* RecOperationCell.xib */,
 			);
 			name = "首页";
 			sourceTree = "<group>";
@@ -461,6 +470,7 @@
 				38D3F8992490E6B000642E63 /* LaunchScreen.storyboard in Resources */,
 				38D3F8962490E6B000642E63 /* Assets.xcassets in Resources */,
 				38D3F8942490E6AA00642E63 /* Main.storyboard in Resources */,
+				38424580250F5332002A5261 /* RecOperationCell.xib in Resources */,
 				381668A8249CB32E005A3ADD /* VideoPlayCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,9 +537,11 @@
 				38A69DA42507515400022C02 /* BaseTableViewController.swift in Sources */,
 				382C33B325076C60009822A4 /* MainViewController.swift in Sources */,
 				38A69DA22507514A00022C02 /* BaseViewController.swift in Sources */,
+				3842457F250F5332002A5261 /* RecOperationCell.swift in Sources */,
 				381EB5D92491CF0200666BE2 /* RecViewController.swift in Sources */,
 				5970F4E024A4BDAB00BEFF12 /* LYHCycleScrollView.m in Sources */,
 				381668A3249CABFE005A3ADD /* YHView.swift in Sources */,
+				3842457C250F402C002A5261 /* RecMainCell.swift in Sources */,
 				5970F4E124A4BDAB00BEFF12 /* LYHPageControl.m in Sources */,
 				381EB5DD2491CF5700666BE2 /* MyViewController.swift in Sources */,
 				38166877249C86E0005A3ADD /* SwiftPch.swift in Sources */,
