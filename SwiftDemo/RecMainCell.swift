@@ -38,7 +38,7 @@ class RecMainCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewData
     }
     func setupUI() {
         //设置内边距
-//        let insets:UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        let insets:UIEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         //设置itemsize
 //        let itemSize:CGSize = CGSize(width: itemSize., height: 100)
         //初始化layout
@@ -51,6 +51,7 @@ class RecMainCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewData
         newCollectView.delegate = self
         newCollectView.dataSource = self
         newCollectView.backgroundColor = UIColor.yellow
+//        newCollectView.inset
         newCollectView.register(UINib.init(nibName: "RecOperationCell", bundle: .main), forCellWithReuseIdentifier: "RecOperationCell")
         self.addSubview(newCollectView)
         collectView = newCollectView
@@ -79,8 +80,12 @@ class RecMainCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewData
         cell.layer.shadowRadius = 8
         cell.layer.shadowOpacity = 0.1
         cell.layer.masksToBounds = false
-        cell.bLabel.text = items[indexPath.row]
-    return cell
+//        cell.bLabel.text = items[indexPath.row]
+        return cell
+    }
+    //     MARK: - 边框距离
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return  UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
     }
     //    MARK: - 行最小间距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

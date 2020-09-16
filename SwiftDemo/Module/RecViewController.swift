@@ -79,7 +79,7 @@ class RecViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 200
+            return 230
         }
         return 320
     }
@@ -99,7 +99,7 @@ class RecViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             var operationCell : RecMainCell! = tableView.dequeueReusableCell(withIdentifier: "RecMainCell")as?RecMainCell
             if operationCell == nil {
                 operationCell = RecMainCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "RecMainCell")
-                operationCell.setupItemSize(tempItemSize: CGSize(width: 100, height: 100))
+                operationCell.setupItemSize(tempItemSize: CGSize(width: 280, height: 200))
                 operationCell.setupUI()
             }
             operationCell.items = ["1","2","3"]
