@@ -48,14 +48,17 @@ class RecMainCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewData
         
         //创建collectionView
         let newCollectView = UICollectionView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: itemSize!.height+20), collectionViewLayout: layout)
+        newCollectView.backgroundColor = UIColor.yellow
         newCollectView.delegate = self
         newCollectView.dataSource = self
-        newCollectView.backgroundColor = UIColor.yellow
 //        newCollectView.inset
         newCollectView.register(UINib.init(nibName: "RecOperationCell", bundle: .main), forCellWithReuseIdentifier: "RecOperationCell")
         self.addSubview(newCollectView)
         collectView = newCollectView
     }
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return 2
+//    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }

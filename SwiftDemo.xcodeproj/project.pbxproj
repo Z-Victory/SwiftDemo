@@ -25,6 +25,7 @@
 		3842457C250F402C002A5261 /* RecMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842457B250F402C002A5261 /* RecMainCell.swift */; };
 		3842457F250F5332002A5261 /* RecOperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3842457D250F5332002A5261 /* RecOperationCell.swift */; };
 		38424580250F5332002A5261 /* RecOperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3842457E250F5332002A5261 /* RecOperationCell.xib */; };
+		3843E224251454260018E962 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3843E223251454260018E962 /* TestViewController.swift */; };
 		387D034C25076F3B0004ADF9 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D034B25076F3B0004ADF9 /* CommonViewController.swift */; };
 		38A69DA02507513B00022C02 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A69D9F2507513B00022C02 /* BaseNavigationController.swift */; };
 		38A69DA22507514A00022C02 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A69DA12507514A00022C02 /* BaseViewController.swift */; };
@@ -81,6 +82,7 @@
 		3842457B250F402C002A5261 /* RecMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecMainCell.swift; sourceTree = "<group>"; };
 		3842457D250F5332002A5261 /* RecOperationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecOperationCell.swift; sourceTree = "<group>"; };
 		3842457E250F5332002A5261 /* RecOperationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecOperationCell.xib; sourceTree = "<group>"; };
+		3843E223251454260018E962 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		387D034B25076F3B0004ADF9 /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonViewController.swift; path = Module/CommonViewController.swift; sourceTree = "<group>"; };
 		38A69D9F2507513B00022C02 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		38A69DA12507514A00022C02 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				3842457B250F402C002A5261 /* RecMainCell.swift */,
 				3842457D250F5332002A5261 /* RecOperationCell.swift */,
 				3842457E250F5332002A5261 /* RecOperationCell.xib */,
+				3843E223251454260018E962 /* TestViewController.swift */,
 			);
 			name = "首页";
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				38A69DA42507515400022C02 /* BaseTableViewController.swift in Sources */,
 				382C33B325076C60009822A4 /* MainViewController.swift in Sources */,
 				38A69DA22507514A00022C02 /* BaseViewController.swift in Sources */,
+				3843E224251454260018E962 /* TestViewController.swift in Sources */,
 				3842457F250F5332002A5261 /* RecOperationCell.swift in Sources */,
 				381EB5D92491CF0200666BE2 /* RecViewController.swift in Sources */,
 				5970F4E024A4BDAB00BEFF12 /* LYHCycleScrollView.m in Sources */,
