@@ -35,7 +35,7 @@ class TestViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     let defaultLayout = UICollectionViewFlowLayout()
 
-    defaultLayout.scrollDirection = UICollectionView.ScrollDirection.vertical//设置垂直显示
+    defaultLayout.scrollDirection = UICollectionView.ScrollDirection.horizontal//设置垂直显示
 
     defaultLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)//设置边距
 
@@ -51,7 +51,7 @@ class TestViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     let collectionView = UICollectionView(frame: CGRect(x:0, y:0, width:kScreenWidth, height:kScreenHeight), collectionViewLayout: defaultLayout)
 
-    collectionView.backgroundColor = UIColor.white
+    collectionView.backgroundColor = UIColor.red
 
     collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
 
