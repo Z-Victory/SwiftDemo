@@ -23,7 +23,7 @@ class MainViewController: UITabBarController {
         super.viewDidLoad()
         self.tabBar.insertSubview(drawTabbarBgImageView(), at: 0)
         self .addChildVCWithImage(childVC: HomeViewController(), childName: "主页", image: "home_Selected", selectImage: "home_Selected", index: 0)
-        self .addChildVCWithImage(childVC: HomeViewController(), childName: "发现", image: "discover", selectImage: "discover_Selected", index: 1)
+        self .addChildVCWithImage(childVC: FoundViewController(), childName: "发现", image: "discover", selectImage: "discover_Selected", index: 1)
         self .addChildVCWithImage(childVC: HomeViewController(), childName: "发布", image: "add_video", selectImage: "add_video", index: 2)
         self .addChildVCWithImage(childVC: HomeViewController(), childName: "消息", image: "event", selectImage: "event_Selected", index: 3)
         self .addChildVCWithImage(childVC: HomeViewController(), childName: "我的", image: "me", selectImage: "me_Selected", index: 4)
@@ -36,6 +36,8 @@ class MainViewController: UITabBarController {
         self.tabBar.barTintColor = UIColor.yellow
         self.tabBar.tintColor = UIColor.black
     }
+    
+    
     func addChildVCWithImage(childVC:UIViewController,childName:String,image:String,selectImage:String,index:Int) -> Void {
         let nav = UINavigationController(rootViewController: childVC)
         nav.title = childName
@@ -47,6 +49,7 @@ class MainViewController: UITabBarController {
             nav.tabBarItem.imageInsets = UIEdgeInsets(top: -StandOutHeight/1.5, left: 1, bottom: StandOutHeight/1.5, right: 0);
         }
     }
+    //画中间按钮突出形状
     func drawTabbarBgImageView() -> UIImageView {
         let radius:CGFloat = 26
         let allFloat:CGFloat = CGFloat(pow(radius, 2)-pow(radius-CGFloat(StandOutHeight), 2));

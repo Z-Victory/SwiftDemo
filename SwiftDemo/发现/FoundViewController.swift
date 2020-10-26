@@ -43,11 +43,12 @@ class FoundViewController: BaseViewController,UITableViewDataSource,UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellid : String = "cell"
-        var cell:UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: cellid)as? UITableViewCell
-        if cell == nil {
-            cell = UITableViewCell.init(style: .default, reuseIdentifier: cellid)
-        }
-        cell.textLabel?.text = "第\(indexPath.row)行"
+//        var cell:UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: cellid)as? UITableViewCell
+//        if cell == nil {
+//            cell = UITableViewCell.init(style: .default, reuseIdentifier: cellid)
+//        }
+//        cell.textLabel?.text = "第\(indexPath.row)行"
+        var cell = FoundMainCell.cellWithTableView(tableView: tableView, cellid: cellid)
         return cell
     }
 }
