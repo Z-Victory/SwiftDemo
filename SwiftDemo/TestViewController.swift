@@ -49,7 +49,7 @@ class TestViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     defaultLayout.footerReferenceSize = CGSize(width: 0, height: 15)
 
-    let collectionView = UICollectionView(frame: CGRect(x:0, y:0, width:kScreenWidth, height:kScreenHeight), collectionViewLayout: defaultLayout)
+    let collectionView = UICollectionView(frame: CGRect(x:0, y:0, width:kScreenWidth, height:100), collectionViewLayout: defaultLayout)
 
     collectionView.backgroundColor = UIColor.red
 

@@ -149,8 +149,8 @@ func getData() -> Void {
     //返回遵从`JXSegmentedListContainerViewListDelegate`协议的实例
     func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
         if index == 0 {
-//            return RecViewController()
-            return TestViewController()
+            return RecViewController()
+//            return TestViewController()
         }
         return CommonViewController()
     }

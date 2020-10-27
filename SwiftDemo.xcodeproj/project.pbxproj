@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3807755D2546A70700E2ECEF /* RecBusinessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3807755C2546A70700E2ECEF /* RecBusinessCell.swift */; };
 		38166867249B443F005A3ADD /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38166866249B443F005A3ADD /* Person.swift */; };
 		38166869249B448E005A3ADD /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38166868249B448E005A3ADD /* Student.swift */; };
 		3816686B249B4506005A3ADD /* Student2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3816686A249B4506005A3ADD /* Student2.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		2198A22993A7B1CD295EF758 /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
+		3807755C2546A70700E2ECEF /* RecBusinessCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecBusinessCell.swift; sourceTree = "<group>"; };
 		38166866249B443F005A3ADD /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		38166868249B448E005A3ADD /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		3816686A249B4506005A3ADD /* Student2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student2.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				3842457D250F5332002A5261 /* RecOperationCell.swift */,
 				3842457E250F5332002A5261 /* RecOperationCell.xib */,
 				3843E223251454260018E962 /* TestViewController.swift */,
+				3807755C2546A70700E2ECEF /* RecBusinessCell.swift */,
 			);
 			name = "首页";
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				38166874249C5F39005A3ADD /* YHStatusBarTool.swift in Sources */,
 				381EB5DF24932BCC00666BE2 /* ArithmeticSample.swift in Sources */,
 				38A69DA42507515400022C02 /* BaseTableViewController.swift in Sources */,
+				3807755D2546A70700E2ECEF /* RecBusinessCell.swift in Sources */,
 				382C33B325076C60009822A4 /* MainViewController.swift in Sources */,
 				38A69DA22507514A00022C02 /* BaseViewController.swift in Sources */,
 				3843E224251454260018E962 /* TestViewController.swift in Sources */,
