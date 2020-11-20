@@ -88,15 +88,24 @@ class RecViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return 0.01
-        }
+//        if section == 0 {
+//            return 0.01
+//        }
         return 44
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView.init(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         view.backgroundColor = UIColor.red
+        
+        //热门视频
+        let titleLabel = UILabel.init()
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        titleLabel.text = "热门视频"
+        titleLabel.textColor = UIColor.black
+
+        titleLabel.frame = CGRect(x: 15, y: 13, width:kScreenWidth-30 , height: 38)
+        view.addSubview(titleLabel)
         return view
     }
     
@@ -123,10 +132,13 @@ class RecViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
 //        let headerCell = VideoPlayCell()
         var videoCell : VideoPlayCell! = tableView.dequeueReusableCell(withIdentifier: "VideoPlayCell")as?VideoPlayCell
         if videoCell == nil {
-//            videoCell = VideoPlayCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "VideoPlayCell")
-            videoCell = Bundle.main.loadNibNamed("VideoPlayCell", owner: nil, options: nil)?.first as? VideoPlayCell
+            videoCell = VideoPlayCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "VideoPlayCell")
+//            videoCell = Bundle.main.loadNibNamed("VideoPlayCell", owner: nil, options: nil)?.first as? VideoPlayCell
         }
         return videoCell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
     }
     
     func testHeader() -> UIView {
@@ -143,10 +155,10 @@ class RecViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         searchImage.image = UIImage(named: "search_small")
         textfield.addSubview(searchImage)
         
-        searchImage.snp_makeConstraints {
-            $0.size.equalTo(CGSize(width: 12, height: 12))
-            $0.left.equalTo(11)
-            $0.centerY.equalTo(textfield)
+        searchImage.snp.makeConstraints { (make) -> Void in
+            make.size.equalTo(CGSize(width: 12, height: 12))
+            make.left.equalTo(11)
+            make.centerY.equalTo(textfield)
         }
         
         
@@ -155,9 +167,9 @@ class RecViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         searchLabel.font = UIFont.systemFont(ofSize: 14)
         searchLabel.text = "搜索作品/艺术家"
         textfield.addSubview(searchLabel)
-        searchLabel.snp_makeConstraints{
-            $0.left.equalTo(searchImage.snp.right).offset(11)
-            $0.centerY.equalTo(searchImage)
+        searchLabel.snp.makeConstraints { (make) -> Void in
+            make.left.equalTo(searchImage.snp.right).offset(11)
+            make.centerY.equalTo(searchImage)
         }
         
         
