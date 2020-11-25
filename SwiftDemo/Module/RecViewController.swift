@@ -22,49 +22,6 @@ class RecViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     }
     
     func setUI() -> Void {
-        //搜索view
-//        let textfieldView = UIView.init(frame: CGRect(x: 15, y: 5, width: kScreenWidth - 30, height: 34))
-//        textfieldView.backgroundColor = UIColor.lightGray
-//        textfieldView.layer.cornerRadius = 8.0;
-//        self.view.addSubview(textfieldView)
-//
-//        //搜索图🔍
-//        let searchImage = UIImageView()
-//        searchImage.image = UIImage.init(named: "search_small")
-//        textfieldView.addSubview(searchImage)
-//        searchImage.snp.makeConstraints {
-//            $0.size.equalTo(CGSize(width: 12, height: 12))
-//            $0.left.equalTo(11)
-//            $0.centerY.equalTo(textfieldView)
-//        }
-//
-//        let searchLabel = UILabel()
-//        searchLabel.textColor = UIColor.hexStringColor(hexString: "#CCCCCC")
-//        searchLabel.font = UIFont.systemFont(ofSize: 14)
-//        searchLabel.text = "搜索作品/艺术家"
-//        self.view.addSubview(searchLabel)
-//        searchLabel.snp.makeConstraints{
-//            $0.left.equalTo(searchImage.snp_rightMargin).offset(11)
-//            $0.centerY.equalTo(textfieldView)
-//        }
-//        UITapGestureRecognizer * searchTap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
-//            //跳转搜索界面
-//            [DKJumpManager pushSearchVC:self];
-//        }];
-//        searchTap.numberOfTapsRequired = 1;
-//        searchTap.numberOfTouchesRequired = 1;
-////        [textfield addGestureRecognizer:searchTap];
-//        let bannerImagesArray = NSMutableArray(array: ["http://image.manamana.net/1592364690215_8wBMeQ4n",
-//                                                       "http://image.manamana.net/1591597041882_G1sMUmnY",
-//                                                       "http://image.manamana.net/1592274629585_p88gztyX",
-//                                                       "http://image.manamana.net/1591927948714_cCOrIk0W"])
-//
-//        bannerView = LYHCycleScrollView.init(frame: CGRect(x: 0, y: textfieldView.bottom, width: kScreenWidth, height: kScreenWidth*0.46), addImageArray: bannerImagesArray)
-//        bannerView.backgroundColor = UIColor.white
-//        self.view.addSubview(bannerView)
-//        bannerView.imageArray = bannerImagesArray
-//        bannerView.reloadImage();
-        
         tableView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight-Height_Tabbar - 57 - CGFloat(Height_StatusBar))
         tableView.delegate = self
         tableView.dataSource = self
@@ -72,31 +29,39 @@ class RecViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         self.view.addSubview(tableView)
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 3
+            return 1
         }
         return 10
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //RecCellStyleOperation
         if indexPath.section == 0 {
-            return 230
+            return SCREEN_RATIO(x: 45)+34+14
         }
+        //RecCellStyleLive == 44
+        
         return 320
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        if section == 0 {
-//            return 0.01
-//        }
+        if section == 0 {
+            return 0.01
+        }
         return 44
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView.init(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        view.backgroundColor = UIColor.red
+        if section == 0 {
+            return nil
+        }
+        let view = UIView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 45))
         
         //热门视频
         let titleLabel = UILabel.init()
@@ -110,11 +75,12 @@ class RecViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print(indexPath.section,indexPath.row)
         if indexPath.section == 0 && indexPath.row == 0 {
             var operationCell : RecMainCell! = tableView.dequeueReusableCell(withIdentifier: "RecMainCell")as?RecMainCell
             if operationCell == nil {
                 operationCell = RecMainCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "RecMainCell")
-                operationCell.setupItemSize(tempItemSize: CGSize(width: 90, height: 131))
+                operationCell.setupItemSize(tempItemSize: CGSize(width: SCREEN_RATIO(x: 45), height: SCREEN_RATIO(x: 45)+34))
                 operationCell.setupUI()
             }
             operationCell.items = ["1","2","3"]
