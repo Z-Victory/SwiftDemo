@@ -5,4 +5,6 @@ target 'SwiftDemo' do
   pod 'SwiftLint'
   pod 'Alamofire'
   pod 'ObjectMapper'
+  pod 'HandyJSON'
+  pod 'SwiftyJSON'
 end

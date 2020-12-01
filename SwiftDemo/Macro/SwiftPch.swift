@@ -9,7 +9,13 @@
 import Foundation
 import UIKit
 import SnapKit
+import Alamofire
+import SwiftyJSON
+import HandyJSON
 
+//网络请求类型
+let kHTTPMethodGet:HTTPMethod = HTTPMethod.get
+let kHTTPMethodPost:HTTPMethod = HTTPMethod.post
 
 let kScreenWidth = UIScreen.main.bounds.size.width
 let kScreenHeight = UIScreen.main.bounds.size.height

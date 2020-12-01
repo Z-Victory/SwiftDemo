@@ -9,6 +9,7 @@
 import UIKit
 import JXSegmentedView
 import SnapKit
+import Alamofire
 
 class RecViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -19,8 +20,8 @@ class RecViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        self.request()
     }
-    
     func setUI() -> Void {
         tableView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight-Height_Tabbar - 57 - CGFloat(Height_StatusBar))
         tableView.delegate = self
@@ -87,19 +88,9 @@ class RecViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             operationCell.reloadCollCell()
             return operationCell
         }
-//        if indexPath.item == 0 {
-//          let headerCell = VideoPlayCell()
-//          headerCell.todayCell.todayItem = todayItem
-//          headerCell.todayCell.layer.cornerRadius = 0
-//          headerCell.clipsToBounds = true
-//          headerCell.todayCell.backgroundView = nil
-//          return headerCell
-//        }
-//        let headerCell = VideoPlayCell()
         var videoCell : VideoPlayCell! = tableView.dequeueReusableCell(withIdentifier: "VideoPlayCell")as?VideoPlayCell
         if videoCell == nil {
             videoCell = VideoPlayCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "VideoPlayCell")
-//            videoCell = Bundle.main.loadNibNamed("VideoPlayCell", owner: nil, options: nil)?.first as? VideoPlayCell
         }
         return videoCell
     }
@@ -154,7 +145,22 @@ class RecViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         
         return headerView
     }
-
+    
+    //MARK: - 网络请求
+    //post请求,后台接收from表单,encoding要为URLEncoding.queryString
+    func request() -> Void {
+        //接口地址
+        let urls:String = "https://www.manamana.net/api/common/categoryAllList"
+        //参数
+//        let parameters:Dictionary = ["type":"1","name":"customer","password":"123456"]
+        //Alamofire 请求实例
+        AF.request(URL(string: urls)!, method: .get, parameters: nil)
+                        .responseString { (responses) in
+            let ste:String = responses.value ?? ""
+            print(ste)
+        }
+    }
+    
 }
 
 extension RecViewController: JXSegmentedListContainerViewListDelegate {

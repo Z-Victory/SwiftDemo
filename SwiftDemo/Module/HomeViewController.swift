@@ -8,7 +8,9 @@
 
 import UIKit
 import JXSegmentedView
+import SwiftyJSON
 import Alamofire
+import HandyJSON
 
 class HomeViewController: UIViewController, JXSegmentedViewDelegate, JXSegmentedListContainerViewDataSource {
     var a:Int?
@@ -64,40 +66,26 @@ class HomeViewController: UIViewController, JXSegmentedViewDelegate, JXSegmented
         view.addSubview(listContainerView)
         segmentedView.listContainer = listContainerView
 //        setUI()
-//        getData()
+        getTags()
     }
-func getData() -> Void {
-
-        let para = ["pageSize":String(50),"pageIndex":String(1)]
-    let request = AF.request("https://www.manamana.net/api/mobile/2.0/recommend/hotVideoList",method: .get,parameters:para,encoder: URLEncodedFormParameterEncoder(destination: .httpBody),headers: ["Content-Type":"application/json"])
-
-        request.responseJSON { (dataResponse) in
-    //        print("访问的Url地址 = " + baseUrl + loginUrl)
-            let resultDict = dataResponse.value as! [String:Any]
-            if dataResponse.error == nil{
-                ///请求成功
-                let resultDict = dataResponse.value as! [String:Any]
-                print(resultDict)
-            }else{
-                print(dataResponse.error!)
-            }
+func getTags() -> Void {
+    /*
+    AF.request(URL(string: urls)!, method: .get, parameters: nil)
+                    .responseString { (responses) in
+        let ste:String = responses.value ?? ""
+        print(ste)
+    }
+ */
+    let  tagUrl = BASE_URL + khomeTagList
+    
+    AF.request(URL(string: tagUrl)!, method: .get).responseString { (response) in
+        let ste:String = response.value ?? ""
+        let jsonString = JSON(ste)
+        print(jsonString)
+        if let tagList = JSONDeserializer<PageTagModel>.deserializeFrom(json: jsonString){
+            print(tagList)
         }
-    //        let para:[String:Any] = ["pageSize":String(50),"pageIndex":String(1)]
-    //        let header:HTTPHeaders = ["Accept": "*/*", "X-Requested-With": "APP"]
-    //        AF.request("https://www.manamana.net/api/mobile/2.0/recommend/hotVideoList",
-    //                   method: HTTPMethod.get,
-    //                   parameters: para,
-    //                   encoding: URLEncoding.default ,
-    //                   headers: header).responseJSON { (dataResponse) in
-    //            debugPrint("debugPrint \(dataResponse)")
-    //            if dataResponse.value != nil{
-    //                let values = dataResponse.result as! NSDictionary
-    //                let messageDic = values["message"] as! NSDictionary
-    //                let questionContentArr = messageDic["questionContent"] as! [[String : Any]]
-    //                if questionContentArr.count != 0 {
-    //                }
-    //            }
-    //        }
+    }
 }
     
     // MARK: segmentView代理方法
@@ -150,7 +138,6 @@ func getData() -> Void {
     func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
         if index == 0 {
             return RecViewController()
-//            return TestViewController()
         }
         return CommonViewController()
     }
