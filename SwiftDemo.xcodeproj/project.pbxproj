@@ -32,6 +32,7 @@
 		38A69DA42507515400022C02 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A69DA32507515400022C02 /* BaseTableViewController.swift */; };
 		38A69DA6250751BB00022C02 /* BaseTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A69DA5250751BB00022C02 /* BaseTabbarController.swift */; };
 		38B1400924A9CDF5005CC502 /* HookTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B1400824A9CDF5005CC502 /* HookTool.swift */; };
+		38C7BFE8257A35B20031380B /* OperationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7BFE7257A35B20031380B /* OperationModel.swift */; };
 		38D3F88D2490E6AA00642E63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3F88C2490E6AA00642E63 /* AppDelegate.swift */; };
 		38D3F88F2490E6AA00642E63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3F88E2490E6AA00642E63 /* SceneDelegate.swift */; };
 		38D3F8942490E6AA00642E63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D3F8922490E6AA00642E63 /* Main.storyboard */; };
@@ -93,6 +94,7 @@
 		38A69DA32507515400022C02 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		38A69DA5250751BB00022C02 /* BaseTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabbarController.swift; sourceTree = "<group>"; };
 		38B1400824A9CDF5005CC502 /* HookTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HookTool.swift; sourceTree = "<group>"; };
+		38C7BFE7257A35B20031380B /* OperationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationModel.swift; sourceTree = "<group>"; };
 		38D3F8892490E6AA00642E63 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D3F88C2490E6AA00642E63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38D3F88E2490E6AA00642E63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -227,6 +229,25 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		38C7BFE5257A34730031380B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3882ADE82576193100587B3C /* PageTagModel.swift */,
+				38C7BFE7257A35B20031380B /* OperationModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		38C7BFE6257A347F0031380B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				381EB5D62491CEF900666BE2 /* HomeViewController.swift */,
+				381EB5D82491CF0200666BE2 /* RecViewController.swift */,
+				387D034B25076F3B0004ADF9 /* CommonViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		38CC69622507534A00BEFFBC /* Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,11 +263,9 @@
 		38CC69642507550C00BEFFBC /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				38C7BFE5257A34730031380B /* Model */,
 				38F80FF2256F9D6E00DAA711 /* View */,
-				381EB5D62491CEF900666BE2 /* HomeViewController.swift */,
-				3882ADE82576193100587B3C /* PageTagModel.swift */,
-				381EB5D82491CF0200666BE2 /* RecViewController.swift */,
-				387D034B25076F3B0004ADF9 /* CommonViewController.swift */,
+				38C7BFE6257A347F0031380B /* Controller */,
 				38F80FF6256FA91F00DAA711 /* YHNetManager.swift */,
 				38F80FFB256FB10400DAA711 /* YHNetworkingTool.swift */,
 			);
@@ -571,6 +590,7 @@
 				59D16000250CEBFA00DF4727 /* FoundViewController.swift in Sources */,
 				38A69DA22507514A00022C02 /* BaseViewController.swift in Sources */,
 				3842457F250F5332002A5261 /* RecOperationCell.swift in Sources */,
+				38C7BFE8257A35B20031380B /* OperationModel.swift in Sources */,
 				381EB5D92491CF0200666BE2 /* RecViewController.swift in Sources */,
 				5970F4E024A4BDAB00BEFF12 /* LYHCycleScrollView.m in Sources */,
 				38F80FFC256FB10400DAA711 /* YHNetworkingTool.swift in Sources */,

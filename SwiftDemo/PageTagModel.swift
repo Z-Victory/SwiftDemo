@@ -7,26 +7,55 @@
 //
 
 import UIKit
-class IndustryListItem    : NSObject {
+import HandyJSON
+
+class IndustryListItem    : HandyJSON {
     var categoryId: Int = 0
     var title: String!
     var titleEn: String!
+
+    //HandyJSON要求必须实现这个方法
+    required init() {
+
+    }
 }
 
-class ProfessionListItem    : NSObject {
+class ProfessionListItem    : HandyJSON {
     var categoryId: Int = 0
     var title: String!
     var titleEn: String!
+
+    //HandyJSON要求必须实现这个方法
+    required init() {
+
+    }
 }
 
-class HotTagsListItem    : NSObject {
+class HotTagsListItem    : HandyJSON {
     var categoryId: Int = 0
     var title: String!
     var titleEn: String!
+
+    //HandyJSON要求必须实现这个方法
+    required init() {
+
+    }
 }
 
-class PageTagModel    : NSObject {
-    var industryList: [IndustryListItem]!
-    var professionList: [ProfessionListItem]!
-    var hotTagsList: [HotTagsListItem]!
+class PageTagModel    : HandyJSON {
+    var industryList: [IndustryListItem]?
+    var professionList: [ProfessionListItem]?
+    var hotTagsList: [HotTagsListItem]?
+
+    //HandyJSON要求必须实现这个方法
+    required init() {}
 }
+//struct PageTagModel : HandyJSON {
+//    var industryList : [String:Any]?
+//
+//}
+//struct IndustryListItem : HandyJSON {
+//    var categoryId: Int = 0
+//    var title: String?
+//    var titleEn: String?
+//}

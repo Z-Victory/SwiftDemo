@@ -16,6 +16,9 @@ class RecViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     
     let tableView = UITableView(frame: .zero, style: .grouped)
     var rollView : LYHCycleScrollView?
+    var bannerArray:[Any]?
+    var bannerImagesArray:[Any]?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -157,6 +160,19 @@ class RecViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         AF.request(URL(string: urls)!, method: .get, parameters: nil)
                         .responseString { (responses) in
             let ste:String = responses.value ?? ""
+            print(ste)
+        }
+    }
+    //banner
+    func requestBanner() -> Void {
+        //接口地址
+        let urls:String = "https://www.manamana.net/api/operations/list/7"
+        //Alamofire 请求实例
+        AF.request(URL(string: urls)!, method: .get, parameters: nil)
+                        .responseString { (responses) in
+            let ste:String = responses.value ?? ""
+            self.bannerArray?.removeAll()
+            self.bannerImagesArray?.removeAll()
             print(ste)
         }
     }
