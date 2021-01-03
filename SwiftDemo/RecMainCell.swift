@@ -45,14 +45,20 @@ class RecMainCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewData
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = itemSize ?? CGSize(width: 0, height: 0)
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
+        //边框距离
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
+        //行最小间距
+        layout.minimumLineSpacing = 10
+        //列最小间距
+        layout.minimumInteritemSpacing = 10
         
         //创建collectionView
-        let newCollectView = UICollectionView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: itemSize!.height+20), collectionViewLayout: layout)
+        let newCollectView = UICollectionView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: itemSize!.height), collectionViewLayout: layout)
         newCollectView.backgroundColor = UIColor.yellow
         newCollectView.delegate = self
         newCollectView.dataSource = self
 //        newCollectView.inset
-        newCollectView.register(UINib.init(nibName: "RecOperationCell", bundle: .main), forCellWithReuseIdentifier: "RecOperationCell")
+        newCollectView.register(RecOperationCell.classForCoder(), forCellWithReuseIdentifier: "RecOperationCell")
         self.addSubview(newCollectView)
         collectView = newCollectView
     }
@@ -85,18 +91,6 @@ class RecMainCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewData
         cell.layer.masksToBounds = false
 //        cell.bLabel.text = items[indexPath.row]
         return cell
-    }
-    //     MARK: - 边框距离
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return  UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 0)
-    }
-    //    MARK: - 行最小间距
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    //    MARK: - 列最小间距
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)

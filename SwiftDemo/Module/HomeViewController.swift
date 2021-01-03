@@ -8,19 +8,35 @@
 
 import UIKit
 import JXSegmentedView
+import SwiftyJSON
 import Alamofire
+import HandyJSON
 
 class HomeViewController: UIViewController, JXSegmentedViewDelegate, JXSegmentedListContainerViewDataSource {
     var a:Int?
     
     var segmentedView = JXSegmentedView()
     var segmentedDataSource = JXSegmentedTitleDataSource()
+    ///所有page模型
+//    var allTagModel:[Any] = []
+    ///所有page的title
+    lazy var allTitleArray:[String]? = []
+    ///page对应的VC名称
+    lazy var allPageVCName:[String]? = []
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        getTags { (result) in
+            print(result)
+            self.setUI()
+        }
+    }
+    //MARK: - 初始化UI
+    func setUI() {
         let _: CGFloat = 150
-        let titles = ["推荐","关注","科技","VR","MAPPING","艺术展","奥特曼"]
         //1.初始化JXSegmentedView
         segmentedView = JXSegmentedView()
         segmentedView.delegate = self
@@ -30,11 +46,11 @@ class HomeViewController: UIViewController, JXSegmentedViewDelegate, JXSegmented
         segmentedDataSource = JXSegmentedTitleDataSource()
         //配置数据源相关配置属性
 //        segmentedDataSource.item = totalItemWidth/CGFloat(titles.count)
-        segmentedDataSource.titles = titles
+        segmentedDataSource.titles = self.allTitleArray!
         segmentedDataSource.isTitleMaskEnabled = false
         segmentedDataSource.titleNormalColor = UIColor.hexStringColor(hexString: "#999999")
         segmentedDataSource.titleSelectedColor = UIColor.hexStringColor(hexString: "#1A1A1A")
-        segmentedDataSource.itemSpacing = 0
+//        segmentedDataSource.itemSpacing = 0
         segmentedDataSource.isItemWidthZoomEnabled = true
         segmentedDataSource.titleSelectedZoomScale = 1.85
         segmentedDataSource.itemWidthSelectedZoomScale = 1.85
@@ -63,44 +79,91 @@ class HomeViewController: UIViewController, JXSegmentedViewDelegate, JXSegmented
         listContainerView.frame = CGRect(x: 0, y: StatusBar_Height+60, width: view.bounds.size.width, height: view.bounds.size.height - StatusBar_Height - 60)
         view.addSubview(listContainerView)
         segmentedView.listContainer = listContainerView
-//        setUI()
-//        getData()
     }
-func getData() -> Void {
-
-        let para = ["pageSize":String(50),"pageIndex":String(1)]
-    let request = AF.request("https://www.manamana.net/api/mobile/2.0/recommend/hotVideoList",method: .get,parameters:para,encoder: URLEncodedFormParameterEncoder(destination: .httpBody),headers: ["Content-Type":"application/json"])
-
-        request.responseJSON { (dataResponse) in
-    //        print("访问的Url地址 = " + baseUrl + loginUrl)
-            let resultDict = dataResponse.value as! [String:Any]
-            if dataResponse.error == nil{
-                ///请求成功
-                let resultDict = dataResponse.value as! [String:Any]
-                print(resultDict)
-            }else{
-                print(dataResponse.error!)
+    
+    //MARK: - 网络请求
+    func getTags(finish: @escaping (_ result:String)->()){
+        let  tagUrl = BASE_URL + khomeTagList
+        
+        AF.request(URL(string: tagUrl)!, method: .get).responseString { (response) in
+            let ste:String = response.value ?? ""
+            //通常我们拿到数据会进行非常麻烦的Optinonal（可选类型）进行拆包（Wrapping）操作，SwiftyJSON内部会自动对Optinonal进行拆包，大大简化了代码，解析非常方便
+            //如果是字典或者数组类型的字符串
+            let jsonString = JSON(ste)
+    //        如果是JSON格式的字符串
+    //        let jsonString2 = JSON(parseJSON: ste)
+    //        print(jsonString.stringValue)
+    //        let jsonString3 = "{\"doubleOptional\":1.1,\"stringImplicitlyUnwrapped\":\"hello\",\"int\":1}"
+            
+    //        解析方法1
+    //        if let tagList = JSONDeserializer<PageTagModel>.deserializeFrom(json: jsonString.stringValue){
+    //            print(tagList)
+    //        }
+            
+    //        解析方法2
+            if let tagList = PageTagModel.deserialize(from: jsonString.stringValue, designatedPath: "data"){
+//                print(tagList)
+                if tagList.professionList!.count > 0 {
+                    //遍历方法1 不需要获取下标
+                    tagList.professionList?.forEach({ (item) in
+                        let professionItem:ProfessionListItem = item
+                        //判断中英文
+                        if true {
+                            self.allTitleArray?.append(professionItem.title)
+                        }else{
+//                            self.allTitleArray?.append(professionItem.titleEn)
+                        }
+                        self.allPageVCName?.append("CommonPageVC")
+                    })
+                    tagList.industryList?.forEach({ (item) in
+                        let industryItem:IndustryListItem = item
+                        //判断中英文
+                        if true {
+                            self.allTitleArray?.append(industryItem.title)
+                        }else{
+//                            self.allTitleArray?.append(professionItem.titleEn)
+                        }
+                        self.allPageVCName?.append("CommonPageVC")
+                    })
+                    
+                    tagList.hotTagsList?.forEach({ (item) in
+                        let hotItem:HotTagsListItem = item
+                        //判断中英文
+                        if true {
+                            self.allTitleArray?.append(hotItem.title)
+                        }else{
+//                            self.allTitleArray?.append(professionItem.titleEn)
+                        }
+                        self.allPageVCName?.append("CommonPageVC")
+                    })
+                    self.allTitleArray?.insert("推荐", at: 0)
+                    self.allPageVCName?.insert("RecViewController", at: 0)
+                    print("遍历结束")
+                    ///遍历方法2 可以获取下标和元素
+//                    for (index,item) in tagList.professionList!.enumerated() {
+//
+//                    }
+                    
+                    ///遍历方法3 迭代器遍历
+//                    var listIterator = tagList.professionList?.makeIterator()
+//                    while let item = listIterator?.next() {
+//
+//                    }
+                    
+                    ///遍历方法3 使用indices获取数组的索引区间
+//                    for item in tagList.professionList?.indices {
+//
+//                    }
+                    
+                    //初始化UI
+//                    self.setUI()
+                    finish("测试")
+                }
             }
         }
-    //        let para:[String:Any] = ["pageSize":String(50),"pageIndex":String(1)]
-    //        let header:HTTPHeaders = ["Accept": "*/*", "X-Requested-With": "APP"]
-    //        AF.request("https://www.manamana.net/api/mobile/2.0/recommend/hotVideoList",
-    //                   method: HTTPMethod.get,
-    //                   parameters: para,
-    //                   encoding: URLEncoding.default ,
-    //                   headers: header).responseJSON { (dataResponse) in
-    //            debugPrint("debugPrint \(dataResponse)")
-    //            if dataResponse.value != nil{
-    //                let values = dataResponse.result as! NSDictionary
-    //                let messageDic = values["message"] as! NSDictionary
-    //                let questionContentArr = messageDic["questionContent"] as! [[String : Any]]
-    //                if questionContentArr.count != 0 {
-    //                }
-    //            }
-    //        }
 }
     
-    // MARK: segmentView代理方法
+    // MARK: - segmentView代理方法
     //点击选中或者滚动选中都会调用该方法。适用于只关心选中事件，而不关心具体是点击还是滚动选中的情况。
     func segmentedView(_ segmentedView: JXSegmentedView, didSelectedItemAt index: Int) {
 //        var vc = UIViewController.init()
@@ -148,12 +211,30 @@ func getData() -> Void {
     }
     //返回遵从`JXSegmentedListContainerViewListDelegate`协议的实例
     func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
-        if index == 0 {
+        let classNameStr = self.allPageVCName?[index] ?? ""
+        if classNameStr == "RecViewController" {
             return RecViewController()
-//            return TestViewController()
+        }else{
+            return CommonViewController()
         }
-        return CommonViewController()
     }
+    /// 通过ClassName动态创建ViewController
+       /// - Parameter className: calssName
+       /// - Returns: ViewController
+      class func getViewControllerWithCalssName(_ className: String) -> UIViewController {
+           
+           // 准备工作: 命名空间: 必须指定那个bundle(包)
+           // 从Info.plist中获取bundle的名字
+           let namespace = Bundle.main.infoDictionary!["CFBundleName"] as! String
+           // 0.将控制器的字符串转成控制器类型
+           let classFromStr: AnyClass? = NSClassFromString(namespace + "." + className)
+           let viewControllerClass = classFromStr as! UIViewController.Type
+           // 1.创建控制器对象
+           let viewController = viewControllerClass.init()
+           
+           return viewController;
+           
+       }
     //MARK: - JXSegmentedListContainerViewListDelegate
     /*
     // MARK: - Navigation
