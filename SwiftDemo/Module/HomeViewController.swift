@@ -194,13 +194,13 @@ class HomeViewController: UIViewController, JXSegmentedViewDelegate, JXSegmented
     
     func testExternRelationship() -> Void {
         
-        let stu1 = Student.init()
-        let stu2 = Student2.init()
+        let stu1 = Student.init(name: "")
+        let stu2 = Student2.init(name: "")
         stu1.printt()
         stu2.printt()
 
-        let stu3:Person = Student.init()
-        let stu4:Person = Student2.init()
+        let stu3:Person = Student.init(name: "")
+        let stu4:Person = Student2.init(name: "")
         stu3.printt()
         stu4.printt()
     }
@@ -214,6 +214,8 @@ class HomeViewController: UIViewController, JXSegmentedViewDelegate, JXSegmented
         let classNameStr = self.allPageVCName?[index] ?? ""
         if classNameStr == "RecViewController" {
             return RecViewController()
+        }else if index == 1{
+            return ChatViewController()
         }else{
             return CommonViewController()
         }

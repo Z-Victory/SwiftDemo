@@ -42,8 +42,12 @@
 		38D3F8AF2490E6B000642E63 /* SwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3F8AE2490E6B000642E63 /* SwiftDemoUITests.swift */; };
 		38F80FF7256FA91F00DAA711 /* YHNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F80FF6256FA91F00DAA711 /* YHNetManager.swift */; };
 		38F80FFC256FB10400DAA711 /* YHNetworkingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F80FFB256FB10400DAA711 /* YHNetworkingTool.swift */; };
+		5918F3DA25C18B8A00ADACD7 /* ChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5918F3D925C18B8A00ADACD7 /* ChatTableView.swift */; };
+		594B5A6B25BD53980061E9EB /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594B5A6A25BD53980061E9EB /* MessageItem.swift */; };
+		594B5A9C25BD6BA10061E9EB /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594B5A9B25BD6BA10061E9EB /* ChatCell.swift */; };
 		5970F4E024A4BDAB00BEFF12 /* LYHCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5970F4DE24A4BDAB00BEFF12 /* LYHCycleScrollView.m */; };
 		5970F4E124A4BDAB00BEFF12 /* LYHPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5970F4DF24A4BDAB00BEFF12 /* LYHPageControl.m */; };
+		59881C7825BD74DA00E5DCA7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59881C7725BD74DA00E5DCA7 /* ChatViewController.swift */; };
 		59D16000250CEBFA00DF4727 /* FoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D15FFF250CEBFA00DF4727 /* FoundViewController.swift */; };
 		59D16003250CF39200DF4727 /* FoundMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D16002250CF39200DF4727 /* FoundMainCell.swift */; };
 		965208C738332CA28DF3A533 /* libPods-SwiftDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BF37DCA2DB192E965C3AD1 /* libPods-SwiftDemo.a */; };
@@ -110,10 +114,14 @@
 		38D3F8B02490E6B000642E63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38F80FF6256FA91F00DAA711 /* YHNetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHNetManager.swift; sourceTree = "<group>"; };
 		38F80FFB256FB10400DAA711 /* YHNetworkingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YHNetworkingTool.swift; sourceTree = "<group>"; };
+		5918F3D925C18B8A00ADACD7 /* ChatTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableView.swift; sourceTree = "<group>"; };
+		594B5A6A25BD53980061E9EB /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
+		594B5A9B25BD6BA10061E9EB /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		5970F4DC24A4BDAB00BEFF12 /* LYHCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYHCycleScrollView.h; sourceTree = "<group>"; };
 		5970F4DD24A4BDAB00BEFF12 /* LYHPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYHPageControl.h; sourceTree = "<group>"; };
 		5970F4DE24A4BDAB00BEFF12 /* LYHCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYHCycleScrollView.m; sourceTree = "<group>"; };
 		5970F4DF24A4BDAB00BEFF12 /* LYHPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYHPageControl.m; sourceTree = "<group>"; };
+		59881C7725BD74DA00E5DCA7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		59D15FFF250CEBFA00DF4727 /* FoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundViewController.swift; sourceTree = "<group>"; };
 		59D16002250CF39200DF4727 /* FoundMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundMainCell.swift; sourceTree = "<group>"; };
 		910997743198C57C2C18FBDA /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -340,6 +348,7 @@
 				38166868249B448E005A3ADD /* Student.swift */,
 				3816686A249B4506005A3ADD /* Student2.swift */,
 				38B1400824A9CDF5005CC502 /* HookTool.swift */,
+				5918F3D825C18AF000ADACD7 /* 聊天demo */,
 				3816686D249C5C50005A3ADD /* Supporting Files */,
 			);
 			path = SwiftDemo;
@@ -372,6 +381,17 @@
 				3807755C2546A70700E2ECEF /* RecBusinessCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		5918F3D825C18AF000ADACD7 /* 聊天demo */ = {
+			isa = PBXGroup;
+			children = (
+				594B5A6A25BD53980061E9EB /* MessageItem.swift */,
+				594B5A9B25BD6BA10061E9EB /* ChatCell.swift */,
+				5918F3D925C18B8A00ADACD7 /* ChatTableView.swift */,
+				59881C7725BD74DA00E5DCA7 /* ChatViewController.swift */,
+			);
+			path = "聊天demo";
 			sourceTree = "<group>";
 		};
 		5970F4DB24A4BDAB00BEFF12 /* Home */ = {
@@ -476,7 +496,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
-				ORGANIZATIONNAME = mana;
+				ORGANIZATIONNAME = "yahe Liu";
 				TargetAttributes = {
 					38D3F8882490E6AA00642E63 = {
 						CreatedOnToolsVersion = 11.5;
@@ -584,7 +604,9 @@
 				38166874249C5F39005A3ADD /* YHStatusBarTool.swift in Sources */,
 				381EB5DF24932BCC00666BE2 /* ArithmeticSample.swift in Sources */,
 				38A69DA42507515400022C02 /* BaseTableViewController.swift in Sources */,
+				5918F3DA25C18B8A00ADACD7 /* ChatTableView.swift in Sources */,
 				3807755D2546A70700E2ECEF /* RecBusinessCell.swift in Sources */,
+				594B5A6B25BD53980061E9EB /* MessageItem.swift in Sources */,
 				382C33B325076C60009822A4 /* MainViewController.swift in Sources */,
 				59D16003250CF39200DF4727 /* FoundMainCell.swift in Sources */,
 				59D16000250CEBFA00DF4727 /* FoundViewController.swift in Sources */,
@@ -593,6 +615,7 @@
 				38C7BFE8257A35B20031380B /* OperationModel.swift in Sources */,
 				381EB5D92491CF0200666BE2 /* RecViewController.swift in Sources */,
 				5970F4E024A4BDAB00BEFF12 /* LYHCycleScrollView.m in Sources */,
+				594B5A9C25BD6BA10061E9EB /* ChatCell.swift in Sources */,
 				38F80FFC256FB10400DAA711 /* YHNetworkingTool.swift in Sources */,
 				381668A3249CABFE005A3ADD /* YHView.swift in Sources */,
 				3842457C250F402C002A5261 /* RecMainCell.swift in Sources */,
@@ -600,6 +623,7 @@
 				3882ADE4257611F600587B3C /* YHNetworkRequestURL.swift in Sources */,
 				381EB5DD2491CF5700666BE2 /* MyViewController.swift in Sources */,
 				3882ADE92576193100587B3C /* PageTagModel.swift in Sources */,
+				59881C7825BD74DA00E5DCA7 /* ChatViewController.swift in Sources */,
 				38166877249C86E0005A3ADD /* SwiftPch.swift in Sources */,
 				3816686B249B4506005A3ADD /* Student2.swift in Sources */,
 				381EB5DB2491CF0B00666BE2 /* MessageViewController.swift in Sources */,
